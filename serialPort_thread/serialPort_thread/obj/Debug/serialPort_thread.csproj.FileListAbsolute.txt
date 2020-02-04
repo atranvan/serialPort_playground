@@ -1,0 +1,7 @@
+C:\Users\tranvaa\source\repos\serialPort_playground\serialPort_thread\serialPort_thread\obj\Debug\serialPort_thread.csprojAssemblyReference.cache
+C:\Users\tranvaa\source\repos\serialPort_playground\serialPort_thread\serialPort_thread\obj\Debug\serialPort_thread.csproj.CoreCompileInputs.cache
+C:\Users\tranvaa\source\repos\serialPort_playground\serialPort_thread\serialPort_thread\bin\Debug\serialPort_thread.exe.config
+C:\Users\tranvaa\source\repos\serialPort_playground\serialPort_thread\serialPort_thread\bin\Debug\serialPort_thread.exe
+C:\Users\tranvaa\source\repos\serialPort_playground\serialPort_thread\serialPort_thread\bin\Debug\serialPort_thread.pdb
+C:\Users\tranvaa\source\repos\serialPort_playground\serialPort_thread\serialPort_thread\obj\Debug\serialPort_thread.exe
+C:\Users\tranvaa\source\repos\serialPort_playground\serialPort_thread\serialPort_thread\obj\Debug\serialPort_thread.pdb
