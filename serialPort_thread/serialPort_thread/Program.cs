@@ -2,6 +2,7 @@
 using System.IO.Ports;
 using System.Threading;
 using System.Collections.Concurrent;
+using System.Linq;
 
 public class PortChat
 {
@@ -10,49 +11,35 @@ public class PortChat
     static BlockingCollection<string> outputQueue = new BlockingCollection<string>();
     public static void Main()
     {
-        //string name;
-        //string message;
-        //StringComparer stringComparer = StringComparer.OrdinalIgnoreCase;
         Thread readThread = new Thread(Read);
-
 
         // Create a new SerialPort object with default settings.
         _serialPort = new SerialPort("COM25", 115200, Parity.None, 8, StopBits.One);
+
+        // Exit on Ctrl + C
         Console.CancelKeyPress += delegate {
             _continue = false;// call methods to clean up
         };
-        // Set the read/write timeouts
-        //_serialPort.ReadTimeout = 500;
-        //_serialPort.WriteTimeout = 500;
+
 
         _serialPort.Open();
         _continue = true;
         readThread.Start();
 
-        //Console.Write("Name: ");
-        //name = Console.ReadLine();
 
-        //Console.WriteLine("Type QUIT to exit");
 
         while (_continue)
         {
-            Console.WriteLine(outputQueue.Take());
+            String[] arr = outputQueue.ToArray();
+
+            if (arr != null)
+            {
+                Console.WriteLine(arr.LastOrDefault());
+                
+            }
+
 
         }
-        //while (_continue)
-        //{
-        //    message = Console.ReadLine();
-
-        //    if (stringComparer.Equals("quit", message))
-        //    {
-        //        _continue = false;
-        //    }
-        //    else
-        //    {
-        //        //_serialPort.WriteLine(
-        //        //    String.Format("<{0}>: {1}", name, message));
-        //    }
-        //}
 
         readThread.Join();
         _serialPort.Close();
